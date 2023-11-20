@@ -1,0 +1,49 @@
+<!-- AWP_In_Variable Name='"DB".start' -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>renk değiştir</title>
+</head>
+<style>
+
+    #kutu {
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<script type="text/javascript">
+
+    function Kontrol(deger) {
+
+        if (deger >= 1) {
+            var divElementi = document.getElementById("kutu");
+            divElementi.style.background = "blue";
+        } else {
+            var divElementi = document.getElementById("kutu");
+            divElementi.style.background = "red";
+        }
+    }
+
+    setInterval(() => {
+
+        var a = document.getElementById("start_butonu").innerHTML;;
+        Kontrol(a);
+    }, 200)
+    
+</script>
+<body>
+    <div id="deger"><p id="start_butonu">:="DB".start:</p></div>
+    <div id="kutu"></div>
+    <form id="knmbut1" method="post">
+        <input id="in" name='"DB".start' type="hidden" value="1" />
+        <button id="as" type="submit">START</button>
+    </form>
+    <form id="knmbut2" method="post">
+        <input name='"DB".start' type="hidden" value="0" />
+        <button id="sa" type="submit">STOP</button>
+    </form>
+</body>
+</html>
